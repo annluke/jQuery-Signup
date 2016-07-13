@@ -1,21 +1,50 @@
 $(document).ready(function() {
 	$("#signup").click(function() {
-		var name = $("#name-id").val();
-		var email = $("#email-id").val();
-		var password = $("#pass-id").val();
-		var cpassword = $("#confirm-pass-id").val();
-		if (name == '' || email == '' || password == '' || cpassword == '') {
-		alert("Please fill all the fields");
-		} else if ((name.length) < 8) {
-			alert("Username should have atleast 8 characters");
-		} else if (!/\S+@\S+\.\S+/.test(email) ){
-			alert("Invalid email-id");
-		} else if (!/(?=.*[0-9])(?=.*[a-z])(?=.*[!@#$%^&*+-/])([a-zA-Z0-9!@#$%^&**+-/]{8,})/.test(password)) {
-			alert("Password should have atleast 8 characters with atleast 1 digit and 1 special character");
-		} else if (!(password === cpassword)) {
-			alert("Your passwords don't match. Try again");
-		} else {
-			alert("Sign up successful!");
-		}
+		$.validator.addMethod("passwordCheck", function (value, element) {
+        return /(?=.*[0-9])(?=.*[a-z])(?=.*[!@#$%^&*+-/])([a-zA-Z0-9!@#$%^&**+-/]{8,})/.test(value);
+    });
+		$("#signup-form").validate({
+      rules: {
+        username: {
+        	required: true,
+          minlength: 8
+        },
+        email: {
+          required: true,
+          email: true
+        },
+        password: {
+          required: true,
+          minlength: 8,
+          passwordCheck: true
+        },
+        confirmPassword: {
+        	required: true,
+        	equalTo: "#pass-id"
+        }
+      },
+      messages: {
+        name: {
+        	required: "Please enter username",
+        	minlength: "Username must be at least 8 characters long"
+        },
+        email: {
+        	required: "Please enter email address",
+        	email: "Please enter a valid email address"
+        },
+        password: {
+          required: "Please provide a password",
+          minlength: "Password must be at least 8 characters long",
+          passwordCheck: "Password should contain atleast 1 digit and 1 special character"
+        },
+        confirmPassword: {
+          required: "Please confirm password",
+          equalTo: "Passwords do not match"
+        }
+      },
+      submitHandler: function() {
+      	alert("Signup successful!");
+      }
+    });
 	});
 });

@@ -46,7 +46,7 @@ footer {
 .row {
   text-align: center;
   display: block;
-  height: 75px;
+  height: 80px;
 }
 .row::after {
   content: "";
@@ -55,6 +55,7 @@ footer {
 }
 .label-field {
   float: left;
+  clear: left;
   margin-left: 57px;
 }
 .input-field {
@@ -70,4 +71,13 @@ footer {
   padding: 5px 85px;
   text-decoration: none;
   font-size: 16px;
+}
+#signup-form .row label.error {
+  color: #C92323;
+  display: block;
+  text-align: left;
+  font-size: 14px;
+}
+#signup-form .row input.error {
+  display: block;
 }

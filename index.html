@@ -5,6 +5,7 @@
 		<title>Signup Form</title>
         <link rel="stylesheet" href="style.css">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
         <script src="script.js"></script>
 	</head>
 	<body>
@@ -14,7 +15,7 @@
 		<section id="main-container">
 			<div id="signup-container">
 				<h2 id="signup-heading">SIGNUP</h2>
-				<form method="post" autocomplete="off">
+				<form id="signup-form" method="post" autocomplete="off">
 					<div class="row">
 						<span class="label-field">Username:</span>
 						<span class="input-field">
@@ -36,7 +37,7 @@
 	  				<div class="row">
 	  					<span class="label-field">Confirm Password:</span>
 	  					<span class="input-field">
-	  						<input type="password" id="confirm-pass-id" name="confirm-password">
+	  						<input type="password" id="confirm-pass-id" name="confirmPassword">
 	  					</span>
 	  				</div>
 	  				<div class="row">
