@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Signup Form</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="script.js"></script>
+	</head>
+	<body>
+		<header>
+			<h1 id="page-heading">MyLog</h1>
+		</header>
+		<section id="main-container">
+			<div id="signup-container">
+				<h2 id="signup-heading">SIGNUP</h2>
+				<form method="post" autocomplete="off">
+					<div class="row">
+						<span class="label-field">Username:</span>
+						<span class="input-field">
+							<input type="text" id="name-id" name="username">
+						</span>
+	  				</div>
+	  				<div class="row">
+						<span class="label-field">Email:</span>
+						<span class="input-field">
+							<input type="text" id="email-id" name="email">
+						</span>
+	  				</div>
+	  				<div class="row">
+	  					<span class="label-field">Password:</span>
+	  					<span class="input-field">
+	  						<input type="password" id="pass-id" name="password">
+	  					</span>
+	  				</div>
+	  				<div class="row">
+	  					<span class="label-field">Confirm Password:</span>
+	  					<span class="input-field">
+	  						<input type="password" id="confirm-pass-id" name="confirm-password">
+	  					</span>
+	  				</div>
+	  				<div class="row">
+	  					<input type="submit" class="button" id="signup" value="Sign Up">
+	  				</div>
+				</form>	
+			</div>	
+		</section>
+		<footer>
+			<h3>Help</h3>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,73 @@
+body {
+  margin: 0;
+  min-height: 100%;
+}
+header {
+	background-color: #566A9B;
+  color: #fff;
+  padding: 10px;
+  height: 45px;
+}
+footer {
+  background-color: #38486E;
+  color: #fff;
+  height: 40px;
+  width: 100%;
+  font-size: 12px;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  left: 0;   
+}
+#page-heading {
+	font-size: 18px;
+}
+#main-container {
+  height: 90%;
+  margin-top: 40px;
+}
+#signup-heading {
+  font-size: 17px;
+  text-align: center;
+}
+#signup-container {
+	width: 350px;
+  height: 400px;
+  margin: 0 auto;
+  padding: 10px 10px 30px;
+  background-color: #BABAC0;
+  border-radius: 3px;
+}
+#signup-container::after {
+ 	content: "";
+  display: block;
+  height: 100px;
+}
+.row {
+  text-align: center;
+  display: block;
+  height: 75px;
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+.label-field {
+  float: left;
+  margin-left: 57px;
+}
+.input-field {
+  float: left;
+  clear: left;
+  margin-left: 57px;
+}
+#signup {
+  background-color: #38486E;
+  border: 1px solid #38486E;
+  border-radius: 5px;
+  color: white;
+  padding: 5px 85px;
+  text-decoration: none;
+  font-size: 16px;
+}
