@@ -1,53 +1,56 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Signup Form</title>
-        <link rel="stylesheet" href="style.css">
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
-        <script src="script.js"></script>
-	</head>
-	<body>
-		<header>
-			<h1 id="page-heading">MyLog</h1>
-		</header>
-		<section id="main-container">
-			<div id="signup-container">
-				<h2 id="signup-heading">SIGNUP</h2>
-				<form id="signup-form" method="post" autocomplete="off">
-					<div class="row">
-						<span class="label-field">Username:</span>
-						<span class="input-field">
-							<input type="text" id="name-id" name="username">
-						</span>
-	  				</div>
-	  				<div class="row">
-						<span class="label-field">Email:</span>
-						<span class="input-field">
-							<input type="text" id="email-id" name="email">
-						</span>
-	  				</div>
-	  				<div class="row">
-	  					<span class="label-field">Password:</span>
-	  					<span class="input-field">
-	  						<input type="password" id="pass-id" name="password">
-	  					</span>
-	  				</div>
-	  				<div class="row">
-	  					<span class="label-field">Confirm Password:</span>
-	  					<span class="input-field">
-	  						<input type="password" id="confirm-pass-id" name="confirmPassword">
-	  					</span>
-	  				</div>
-	  				<div class="row">
-	  					<input type="submit" class="button" id="signup" value="Sign Up">
-	  				</div>
-				</form>	
-			</div>	
-		</section>
-		<footer>
-			<h3>Help</h3>
-		</footer>
-	</body>
+<head>
+	<meta charset="UTF-8">
+	<title>Signup Form</title>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.min.css"/>
+    <link rel="stylesheet" href="style.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+	<header>
+		<h1 id="page-heading">MyLog</h1>
+	</header>
+	<section id="main-container">
+		<div id="signup-container">
+			<h2 id="signup-heading">SIGNUP</h2>
+			<form id="signup-form" method="post" autocomplete="off"  data-bv-submitbuttons="button[type='submit']" >
+				<div class="row form-group form-row">
+					<label class="label-field control-label">Username:</label>
+					<span class="label-field input-field">
+						<input type="text" id="name-id" class="form-control" name="username">
+					</span>
+	  			</div>
+	  			<div class="row form-group">
+					<label class="label-field control-label">Email:</label>
+					<span class="label-field input-field">
+						<input type="text" id="email-id" class="form-control" name="email">
+					</span>
+	  			</div>
+	  			<div class="row form-group">
+	  				<label class="label-field control-label">Password:</label>
+	  				<span class="label-field input-field">
+	  					<input type="password" id="pass-id" class="form-control" name="password">
+	  				</span>
+	  			</div>
+	  			<div class="row form-group">
+	  				<label class="label-field control-label">Confirm Password:</label>
+	  				<span class="label-field input-field">
+	  					<input type="password" id="confirm-pass-id" class="form-control" name="confirmPassword">
+	  				</span>
+	  			</div>
+	  			<div class="row form-group">
+	  				<button type="submit" class="btn" id="signup">Sign Up</button>
+	  			</div>
+			</form>	
+		</div>	
+	</section>
+	<footer>
+		<h3 id="footer-content">Help</h3>
+	</footer>
+</body>
 </html>

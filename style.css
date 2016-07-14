@@ -5,22 +5,21 @@ body {
 header {
 	background-color: #566A9B;
   color: #fff;
-  padding: 10px;
-  height: 45px;
+  padding: 15px;
 }
 footer {
   background-color: #38486E;
   color: #fff;
-  height: 40px;
   width: 100%;
-  font-size: 12px;
-  padding: 10px;
+  padding: 15px;
   position: fixed;
   bottom: 0;
   left: 0;   
 }
 #page-heading {
-	font-size: 18px;
+  margin: 0;
+	font-size: 25px;
+  font-weight: bold;
 }
 #main-container {
   height: 90%;
@@ -29,10 +28,11 @@ footer {
 #signup-heading {
   font-size: 17px;
   text-align: center;
+  font-weight: bold;
 }
 #signup-container {
-	width: 350px;
-  height: 400px;
+	width: 430px;
+  height: 550px;
   margin: 0 auto;
   padding: 10px 10px 30px;
   background-color: #BABAC0;
@@ -41,12 +41,11 @@ footer {
 #signup-container::after {
  	content: "";
   display: block;
-  height: 100px;
+  height: 50px;
 }
 .row {
-  text-align: center;
   display: block;
-  height: 80px;
+  height: 90px;
 }
 .row::after {
   content: "";
@@ -54,30 +53,26 @@ footer {
   display: block;
 }
 .label-field {
-  float: left;
   clear: left;
-  margin-left: 57px;
 }
 .input-field {
-  float: left;
-  clear: left;
-  margin-left: 57px;
+  width: 85%;
 }
 #signup {
   background-color: #38486E;
   border: 1px solid #38486E;
   border-radius: 5px;
   color: white;
-  padding: 5px 85px;
+  width: 100%;
+  padding: 5px;
   text-decoration: none;
   font-size: 16px;
 }
-#signup-form .row label.error {
-  color: #C92323;
-  display: block;
-  text-align: left;
-  font-size: 14px;
+#signup-form {
+  width: 80%;
+  margin: 0 auto;
 }
-#signup-form .row input.error {
-  display: block;
+#footer-content {
+  margin: 0;
+  font-size: 17px;
 }

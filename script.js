@@ -1,50 +1,63 @@
 $(document).ready(function() {
-	$("#signup").click(function() {
-		$.validator.addMethod("passwordCheck", function (value, element) {
-        return /(?=.*[0-9])(?=.*[a-z])(?=.*[!@#$%^&*+-/])([a-zA-Z0-9!@#$%^&**+-/]{8,})/.test(value);
-    });
-		$("#signup-form").validate({
-      rules: {
-        username: {
-        	required: true,
-          minlength: 8
-        },
-        email: {
-          required: true,
-          email: true
-        },
-        password: {
-          required: true,
-          minlength: 8,
-          passwordCheck: true
-        },
-        confirmPassword: {
-        	required: true,
-        	equalTo: "#pass-id"
+	$("#signup-form").bootstrapValidator({
+    feedbackIcons: {
+      valid: 'glyphicon glyphicon-ok',
+      invalid: 'glyphicon glyphicon-remove',
+      validating: 'glyphicon glyphicon-refresh'
+    },
+    fields: {
+      username: {
+        validators: {
+          notEmpty: {
+            message: 'Username is required'
+          },
+          stringLength: {
+            min: 8,
+            message: 'Username must be at least 8 characters long'
+          }
         }
       },
-      messages: {
-        name: {
-        	required: "Please enter username",
-        	minlength: "Username must be at least 8 characters long"
-        },
-        email: {
-        	required: "Please enter email address",
-        	email: "Please enter a valid email address"
-        },
-        password: {
-          required: "Please provide a password",
-          minlength: "Password must be at least 8 characters long",
-          passwordCheck: "Password should contain atleast 1 digit and 1 special character"
-        },
-        confirmPassword: {
-          required: "Please confirm password",
-          equalTo: "Passwords do not match"
+      email: {
+        validators: {
+          notEmpty: {
+            message: 'Email is required'
+          },
+          emailAddress: {
+            message: 'Email address is not valid'
+          }
         }
       },
-      submitHandler: function() {
-      	alert("Signup successful!");
+      password: {
+        validators: {
+          notEmpty: {
+            message: 'Password is required'
+          },
+          stringLength: {
+            min: 8,
+            message: 'Password must be at least 8 characters long'
+          },
+          regexp: {
+            regexp: /(?=.*[0-9])(?=.*[a-z])(?=.*[!@#$%^&*+-/])([a-zA-Z0-9!@#$%^&**+-/]{8,})/,
+            message: 'Password should contain atleast 1 digit and 1 special character'
+          }
+        }
+      },
+      confirmPassword: {
+        validators: {
+          notEmpty: {
+            message: 'Password confirmation required'
+          },
+          identical: {
+            field: 'password',
+            message: 'Passwords do not match. Try again'
+          }
+        }
       }
-    });
-	});
+    },
+  }).on('success.form.bv', function (e) {
+    e.preventDefault();
+    if(!alert("Signup successful!")) {
+      window.location.reload();
+    }
+  });
 });
